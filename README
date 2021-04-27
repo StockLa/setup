@@ -1,0 +1,21 @@
+# Setup
+
+## Clone the needed repository
+1. git clone git@github.com:StockLa/stockstream.git stockstream
+2. git clone git@github.com:StockLa/source.git source
+3. git clone git@github.com:StockLa/stock-ui.git stock-ui
+
+## Build image
+```bash
+docker-compose build
+```
+
+## Run
+```bash
+docker-compose up 
+```
+
+# Extra
+The ui is serving from port 80
+The java api is serving from port 8080
+The source is serving from port 8001 

@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  stock-source:
+    build: ./source 
+    image: source
+    ports:
+      - "8001:8001"
+  stock-stream:
+    build: ./stockstream 
+    image: stockstream
+    ports:
+      - "8080:8080"
+    depends_on:
+     - "stock-source"
+  stock-ui:
+    build: ./stock-ui 
+    image: stockui
+    ports:
+      - "80:80"
+    depends_on:
+     - "stock-stream"
